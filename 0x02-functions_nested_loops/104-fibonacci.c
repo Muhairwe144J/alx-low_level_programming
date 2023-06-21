@@ -8,17 +8,17 @@
 
 int main(void)
 {
-unsigned long int fib1 = 1;
-unsigned long int fib2 = 2;
-unsigned long int fib_next;
+unsigned long long int fib1 = 1;
+unsigned long long int fib2 = 2;
+unsigned long long int fib_next;
 int count;
 
-printf("%lu, %lu", fib1, fib2);
+printf("%llu, %llu", fib1, fib2);
 
 for (count = 3; count <= 98; count++)
 {
 fib_next = fib1 + fib2;
-printf(", %lu", fib_next);
+printf(", %llu", fib_next);
 
 fib1 = fib2;
 fib2 = fib_next;
@@ -28,4 +28,3 @@ printf("\n");
 
 return (0);
 }
-
