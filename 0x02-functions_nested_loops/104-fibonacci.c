@@ -1,46 +1,31 @@
 #include <stdio.h>
 
 /**
- * main -  fibonacci <3.
+ * main - Entry point
  *
- * purpuse - no hardcode
- * Return: Always (success)
+ * Return: Always 0
  */
 
 int main(void)
-
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
-	unsigned long int l = 1000000000;
-	unsigned long int bef1;
-	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
+unsigned long int fib1 = 1;
+unsigned long int fib2 = 2;
+unsigned long int fib_next;
+int count;
 
-	printf("%lu", aft);
+printf("%lu, %lu", fib1, fib2);
 
-	for (i = 0; i < 92; i++)
-	{
-		printf(",%lu", aft);
-		aft += bef;
-		bef = aft - bef;
-	}
-	bef1 = bef / l;
-	bef2 = bef % l;
-	aft1 = aft / l;
-	aft2 = aft % l;
+for (count = 3; count <= 98; count++)
+{
+fib_next = fib1 + fib2;
+printf(", %lu", fib_next);
 
-	for (i = 93; i < 99; i++)
-	{
-		printf(",%lu", aft1 + (aft2 / l));
-		printf("%lu", aft % l);
-		aft1 = aft1 + bef1;
-		bef1 = aft1 - bef1;
-		aft2 = aft2 + bef2;
-		bef2 = aft2 - bef2;
-	}
-	printf("\n");
-	return (0);
+fib1 = fib2;
+fib2 = fib_next;
 }
+
+printf("\n");
+
+return (0);
+}
+
