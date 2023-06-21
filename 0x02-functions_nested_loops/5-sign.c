@@ -2,8 +2,9 @@
 
 /**
  * print_sign - Prints the sign of a number
- * @c: The number to be checked
- * Return: 1 for positive num, 0 for zero or -1 for anything else
+ * @n: The number to be checked
+ *
+ * Return: 1 is greater than zero, 0 is zero, -1 is less than zero
  */
 
 int print_sign(int n)
@@ -24,4 +25,5 @@ int print_sign(int n)
 		_putchar(45);
 		return (-1);
 	}
+	_putchar('\n');
 }
