@@ -5,25 +5,24 @@
 */
 
 int main(void)
-
 {
+unsigned long fib1 = 1;
+unsigned long fib2 = 2;
+unsigned long fib_next;
+int count;
 
-int i = 0;
-long j = 1, k = 2;
+printf("%lu, %lu", fib1, fib2);
 
-while (i < 50)
+for (count = 3; count <= 98; count++)
 {
-if (i == 0)
-printf("%ld", j);
-else if (i == 1)
-printf("%ld", k);
-else
-{
-k += j;
-printf(",%ld", k);
+fib_next = fib1 + fib2;
+printf(", %lu", fib_next);
+
+fib1 = fib2;
+fib2 = fib_next;
 }
-++i;
-printf("\n");
-}
+
+printf("...\n");
+
 return (0);
 }
