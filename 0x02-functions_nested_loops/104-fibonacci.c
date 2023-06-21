@@ -21,7 +21,7 @@ int main(void)
 
 	printf("%lu", aft);
 
-	for (i = 1; i < 91; i++)
+	for (i = 0; i < 91; i++)
 	{
 		printf(",%lu", aft);
 		aft += bef;
