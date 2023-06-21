@@ -24,7 +24,7 @@ fib1 = fib2;
 fib2 = fib_next;
 }
 
-printf("\n");
+printf("...\n");
 
 return (0);
 }
