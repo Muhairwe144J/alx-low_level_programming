@@ -4,7 +4,7 @@
 /**
  * fizzbuzz - Prints the numbers from 1 to 100 with some exceptions.
  */
-void fizzbuzz(void)
+int main(void)
 {
 	int i;
 
@@ -17,8 +17,11 @@ void fizzbuzz(void)
 		else if (i % 5 == 0)
 			printf("Buzz ");
 		else
+		{
 			printf("%d ", i);
+		}
 	}
 
 	printf("\n");
+	return (0);
 }
