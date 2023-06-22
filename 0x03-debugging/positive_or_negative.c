@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * positive_or_negative - print i as  positive , negative ,zero
+ * @i: integer to be printed
+ *Return: (succes)
+ */
+
 void positive_or_negative(int i)
 {
 if (i > 0)
