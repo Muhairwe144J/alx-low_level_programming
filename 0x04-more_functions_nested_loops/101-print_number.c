@@ -6,30 +6,16 @@
  */
 void print_number(int n)
 {
-	int i, power, is_negative;
-	long int num;
+	unsigned int i = n;
 
-	num = n;
-	is_negative = 0;
-
-	if (num < 0)
+	if (n < 0)
 	{
-		is_negative = 1;
-		num *= -1;
+		_putchar(45);
+		i = -i;
 	}
-
-	power = 1;
-	while (num / power > 9)
-		power *= 10;
-
-	if (is_negative)
-		_putchar('-');
-
-	while (power > 0)
+	if (i / 10)
 	{
-		i = num / power;
-		_putchar(i + '0');
-		num -= i * power;
-		power /= 10;
+		print_number(i / 10);
 	}
+	_putchar(i % 10 + '0');
 }
