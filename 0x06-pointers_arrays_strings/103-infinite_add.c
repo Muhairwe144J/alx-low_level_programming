@@ -1,32 +1,52 @@
 #include "main.h"
 
 /**
- * sqrt_helper - helper function for calculating the square root
- * @n: the number
- * @guess: the current guess
+ * infinite_add - function that adds two numbers
+ * @n1: one of the two numbers
+ * @n2: one of the two numbers
+ * @r: buffer that the function will use to store the result
+ * @size_r: the buffer size
  *
- * Return: the square root of n
+ * Return: always (0)
  */
-int sqrt_helper(int n, int guess)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-    if (guess * guess == n)
-        return guess;
-    if (guess * guess > n)
-        return -1;
+int overflow = 0, i = 0, j = 0, digits = 0;
+int val1 = 0, val2 = 0, temp_tot = 0;
 
-    return sqrt_helper(n, guess + 1);
-}
-
-/**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: the number
- *
- * Return: the square root of n, or -1 if it does not exist
- */
-int _sqrt_recursion(int n)
+while (*(n1 + i) != '\0')
+i++;
+while (*(n2 + j) != '\0')
+j++;
+i--;
+j--;
+if (j >= size_r || i >= size_r)
+	return (0);
+	while (j >= 0 || i >= 0 || overflow == 1)
 {
-    if (n < 0)
-        return -1;
-
-    return sqrt_helper(n, 0);
+	if (i < 0)
+		val1 = 0;
+	else
+	val1 = *(n1 + i) -'0';
+	if (j < 0)
+	val2 = 0;
+	else
+	val2 = *(n2 + j) -'0';
+	temp_tot = val1 + val2 + overflow;
+	if (temp_tot >= 10)
+		overflow = 1;
+	else
+		overflow = 0;
+	if (digits >= (size_r - 1))
+		return (0);
+	*(r + digits) = (temp_tot % 10) + '0';
+	digits++;
+	j--;
+	i--;
 }
+if (digits == size_r)
+	return (0);
+	*(r + digits) = '\0';
+	rev_string(r);
+	return (r);
+	}

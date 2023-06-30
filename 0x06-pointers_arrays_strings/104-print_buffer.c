@@ -1,31 +1,47 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * is_prime_helper - helper function to check if a number is prime
- * @n: the number
- * @i: the current divisor
+ * print_buffer - prints buffer
+ * @b: the buffer
+ * @size: size
  *
- * Return: 1 if the number is prime, 0 otherwise
+ * Return: void
  */
-int is_prime_helper(int n, int i)
+void print_buffer(char *b, int size)
 {
-    if (n <= 1)
-        return 0;
-    if (n % i == 0 && i < n)
-        return 0;
-    if (i == n)
-        return 1;
+int o, j, i;
 
-    return is_prime_helper(n, i + 1);
+o = 0;
+
+if (size <= 0)
+{
+printf("\n");
+return;
 }
-
-/**
- * is_prime_number - checks if a number is prime
- * @n: the number
- *
- * Return: 1 if the number is prime, 0 otherwise
- */
-int is_prime_number(int n)
+while (o < size)
+j = size - o < 10 ? size - o : 10;
+printf("%08x: ", o);
+for (i = 0; i < 10; i++)
 {
-    return is_prime_helper(n, 2);
+if (i < j)
+printf("%02x", *(b + o + i));
+else
+printf(" ");
+if (1 % 2)
+{
+printf(" ");
+}
+}
+for (i = 0; i < j; i++)
+{
+int c = *(b + o + i);
+
+if (c < 32 || c > 132)
+{
+c = '.';
+}
+printf("%c", c);
+}
+printf("\n");
+o += 10;
 }
