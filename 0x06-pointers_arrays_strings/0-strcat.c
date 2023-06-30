@@ -4,7 +4,6 @@
  * _strcat - function that concatenates two strings
  * @dest: The destination string pointer
  * @src: The source string pointer
- *
  * Return: Pointer to the resulting string `dest`
  */
 char *_strcat(char *dest, char *src)
@@ -16,7 +15,7 @@ char *_strcat(char *dest, char *src)
 	{
 		length_of_string++;
 	}
-for (z = 0; src[z] != '\0'; z++, length_of_string++)
+	for (z = 0; src[z] != '\0'; z++, length_of_string++)
 {
 		dest[length_of_string] = src[z];
 	}
