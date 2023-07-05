@@ -40,5 +40,7 @@ int _sqrt_recursion(int n)
 if (n < 0) /* Base case - invalid input */
 return (-1);
 
-return (_sqrt_helper(n, 0, n)); /* Start the search with the range [0, n] */
+return (_sqrt_helper(n, 0, n));
+/* Start the search with the range [0, n/2] */
 }
+
