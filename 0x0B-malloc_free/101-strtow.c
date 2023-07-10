@@ -55,7 +55,6 @@ char **strtow(char *str)
 
 	return (words);
 }
-
 /**
  * count_words - Counts the number of words in a string
  * @str: The string
@@ -64,22 +63,21 @@ char **strtow(char *str)
  */
 int count_words(char *str)
 {
-	int i, count = 0, in_word = 0;
+int i, count = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (is_separator(str[i]))
-		{
-			in_word = 0;
-		}
-		else if (is_separator(str[i - 1]) || i == 0)
-		{
-			count++;
-			in_word = 1;
-		}
-	}
+for (i = 0; str[i] != '\0'; i++)
+{
+if (is_separator(str[i]))
+{
+/* Skip separators */
+}
+else if (is_separator(str[i - 1]) || i == 0)
+{
+count++;
+}
+}
 
-	return (count);
+return (count);
 }
 
 /**
