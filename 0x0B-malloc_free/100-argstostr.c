@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k, length = 0;
 	int totalLength = ac; /* Account for spaces and null terminator */
 
-	if (ac <= 0 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	/* Calculate the total length of the arguments */
@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	str = malloc(sizeof(char) * totalLength);
+	str = malloc(sizeof(char) * (totalLength + 1));
 	if (str == NULL)
 		return (NULL);
 
