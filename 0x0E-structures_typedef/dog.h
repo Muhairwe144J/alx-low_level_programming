@@ -2,10 +2,11 @@
 #define DOG_H
 
 /* Define struct dog */
-struct dog {
-    char *name;
-    float age;
-    char *owner;
+struct dog
+{
+char *name;
+float age;
+char *owner;
 };
 
 /* Define new type dog_t */
