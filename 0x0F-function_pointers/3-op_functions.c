@@ -2,7 +2,6 @@
 #include "function_pointers.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * op_add - Adds two integers.
  * @a: The first integer.
