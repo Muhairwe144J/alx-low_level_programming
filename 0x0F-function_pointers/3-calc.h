@@ -1,15 +1,6 @@
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
 
-/* Function to print a single character */
-int _putchar(char c);
-
-/* Function to print a name using the provided printing function */
-void print_name(char *name, void (*f)(char *));
-
-/* Function to execute a function on each element of an integer array */
-void array_iterator(int *array, size_t size, void (*action)(int));
-
 /**
  * struct op - Struct op
  *
