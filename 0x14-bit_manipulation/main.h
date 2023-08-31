@@ -27,4 +27,4 @@ int get_endianness(void);
 /* Additional function used in Task 1 */
 int _putchar(char c);
 
-#endif /* MAIN_H */
+#endif
