@@ -1,0 +1,1 @@
+bit manipulation by shafik
